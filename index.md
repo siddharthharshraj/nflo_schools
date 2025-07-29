@@ -167,7 +167,8 @@ client/
 
 A constant **banner/message** should be shown at the top of the **Student Dashboard**:
 
-> "**Important:** Please register using your School’s Refer Code: `______` to ensure your school receives payment mapping and access to your results."
+   > "_Ask your students to register using your School Refer Code: `XXXXXX` for payment tracking and result access._"
+
 
 This banner should be dynamically populated based on the school refer code (if known), and should appear before registration or payment.
 
