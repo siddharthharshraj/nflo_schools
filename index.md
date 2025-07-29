@@ -241,8 +241,9 @@ Upon logging in, schools will have access to:
 2. **Student-wise payment status:**
    - ✅ Paid  
    - ❌ Pending  
-3. **Search bar** to filter students by name or email  
-4. A **permanent banner message** at the top:
+3. **Search bar** to filter students by name or email
+4. Filter : By Payment Status , By Class Categories , Show Totals.
+5. A **permanent banner message** at the top:
    > "_Ask your students to register using your School Refer Code: `XXXXXX` for payment tracking and result access._"
 
 ---
