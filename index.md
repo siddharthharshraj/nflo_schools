@@ -122,13 +122,13 @@ Returns:
 | Case | Handling |
 |------|----------|
 | Duplicate email | Block and show “email already registered” |
-| Duplicate refer code | Regenerate or notify conflict |
+| Duplicate refer code | Already Registered : Contact : support-nflo@safefintech.in |
 | Invalid email format | Reject |
 | Empty required fields | Reject |
 | Invalid phone/pin | Add regex validation |
 | Unauthorized dashboard access | 401 Unauthorized |
 | Token tampering | 403 Forbidden |
-| Searching non-existent student | Return empty array |
+| Searching non-existent student | Return empty array | No student of Such Name exists or registered yet |
 | Multiple students with same name | Return all matches with payment status |
 
 ---
@@ -253,6 +253,9 @@ Upon logging in, schools will have access to:
 - JWT tokens are used to protect login and dashboard access
 - PII (Personally Identifiable Information) is **never exposed to the frontend**
 - The system is fully **compliant with India’s Data Protection Agreement (DPA)** and **IT Act (2000 + Amendments)**
+- All APIs should run over HTTPS with TLS 1.2+
+- Maintain logs of data access and login attempts for traceability
+- Explicitly obtain and log consent from schools/students for storing their data
 
 SAFE Fintech is the sole data controller and custodian under this policy.
 
