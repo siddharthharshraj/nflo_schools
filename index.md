@@ -18,9 +18,7 @@ This guide outlines the full MERN implementation flow for the NFLO School Regist
 - School Affiliation Code (e.g., CBSE1234)
 - School Mobile Number
 - School Email
-- City
-- Pin Code
-- Password
+- School City with Pin-Code
 
 ### 🔐 Refer Code Generation Logic
 
@@ -185,5 +183,76 @@ All student and school data is:
 - ✅ Not shared with any unauthorized party, including marketing or affiliates
 
 SAFE Fintech is the sole custodian of this data and is responsible for its protection under Indian law.
+
+---
+
+
+# 🎯 NFLO Business Flow Summary – School Registration & Dashboard
+
+## Step 1: School Registration
+
+Schools **self-register** on the NFLO portal using a form with the following fields:
+- **School Name**  
+- **Affiliation Code** (e.g., CBSE012345)  
+- **Mobile Number**  
+- **Official Email ID**  
+- **City & Pin Code**
+
+---
+
+## Step 2: Automatic Refer Code Generation
+
+After successful registration, each school is assigned a **unique refer code** based on the following logic:
+
+```
+Refer Code = First 4 letters of Affiliation Code +
+             First 4 letters of School Name (no spaces) +
+             Full Pin Code
+```
+
+### 🔐 Example:
+- Affiliation Code: `CBSE012345`  
+- School Name: `DAV Public School`  
+- Pin Code: `800001`  
+➡️ **Refer Code**: `CBSEDAVP800001`
+
+---
+
+## Step 3: Email Confirmation
+
+The school receives a confirmation email containing:
+- Registration acknowledgement
+- Their unique school refer code
+
+---
+
+## Step 4: Student Registration Using Refer Code
+
+- Students will enter the **refer code** provided by their school at the time of registration/payment.  
+- This links the student to the respective school in the backend.
+
+---
+
+## Step 5: School Dashboard Features
+
+Upon logging in, schools will have access to:
+1. **Total number of students** registered via their refer code  
+2. **Student-wise payment status:**
+   - ✅ Paid  
+   - ❌ Pending  
+3. **Search bar** to filter students by name or email  
+4. A **permanent banner message** at the top:
+   > "_Ask your students to register using your School Refer Code: `XXXXXX` for payment tracking and result access._"
+
+---
+
+## 🔐 Data Security & Compliance
+
+- All school and student data is securely stored in **MongoDB on AWS**
+- JWT tokens are used to protect login and dashboard access
+- PII (Personally Identifiable Information) is **never exposed to the frontend**
+- The system is fully **compliant with India’s Data Protection Agreement (DPA)** and **IT Act (2000 + Amendments)**
+
+SAFE Fintech is the sole data controller and custodian under this policy.
 
 ---
